@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Analysis Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Terminal Font and Global Styles */
+        body {
+            background-color: #0c0c0c; /* Deep terminal black */
+            color: #e5e5e5; /* Off-white terminal text */
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            padding: 1rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start; /* Moved from center to left */
+        }
+
+        .terminal-container {
+            width: 100%;
+            max-w: 1200px;
+            position: relative;
+        }
+
+        /* Top bar styling */
+        .top-bar-text {
+            color: #d1b8a5; /* Slightly muted orange/tan to match the image border/text hint */
+        }
+        
+        .top-bar-border {
+            border-bottom: 1px solid #d1b8a5;
+            border-left: 1px solid #d1b8a5;
+        }
+
+        /* Table styling */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        th, td {
+            border: 1px solid #e5e5e5;
+            padding: 0.5rem 1rem;
+            text-align: left;
+            font-weight: normal;
+        }
+        
+        th {
+            text-align: left; /* Moved from center to left */
+        }
+
+        td:first-child {
+            width: 35%;
+        }
+
+        /* Blinking Cursor */
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: #e5e5e5;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-container max-w-5xl w-full pt-4 relative">
+        
+        <!-- Header Section (Replaced with Claude Code Box) -->
+        <fieldset class="border border-[#d97757] rounded-lg flex flex-col md:flex-row mb-10">
+            <legend class="text-[#d97757] px-3 ml-4 md:ml-8 font-mono text-[15px]"> Claude Code v2.1.104 </legend>
+            
+            <!-- Left Pane -->
+            <div class="flex-1 p-6 flex flex-col items-start justify-center text-left border-b md:border-b-0 md:border-r border-[#d97757]">
+                <div class="font-bold text-[#e5e5e5] mb-5 text-[15px]">Welcome back!</div>
+                <div class="text-[#d97757] mb-8">
+                    <!-- Pixel Art Alien / Crab -->
+                    <svg width="44" height="28" viewBox="0 0 11 7" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="0" width="7" height="5"/>
+                        <rect x="0" y="2" width="11" height="2"/>
+                        <rect x="2" y="5" width="1" height="2"/>
+                        <rect x="4" y="5" width="1" height="2"/>
+                        <rect x="6" y="5" width="1" height="2"/>
+                        <rect x="8" y="5" width="1" height="2"/>
+                        <rect x="3" y="1" width="1" height="2" fill="#0c0c0c"/>
+                        <rect x="7" y="1" width="1" height="2" fill="#0c0c0c"/>
+                    </svg>
+                </div>
+                <div class="text-[#a3a3a3] text-[15px] mb-1">qwen2.5-coder:14b &middot; API Usage Billing</div>
+                <div class="text-[#a3a3a3] text-[15px]">C:\WINDOWS\System32</div>
+            </div>
+
+            <!-- Right Pane -->
+            <div class="flex-1 p-6 md:pl-8 flex flex-col justify-center text-left">
+                <div class="text-[#d97757] font-bold mb-1 text-[15px]">Tips for getting started</div>
+                <div class="text-[#e5e5e5] mb-5 text-[15px]">Run /init to create a CLAUDE.md file with instructions for Claude</div>
+                
+                <hr class="border-[#d97757] mb-5 opacity-80">
+                
+                <div class="text-[#d97757] font-bold mb-1 text-[15px]">Recent activity</div>
+                <div class="text-[#a3a3a3] text-[15px]">
+                    <div>Fixed local slash command output like /cost appearing as user-sent messag</div>
+                    <div>Project configs & auto memory now shared across git worktrees of the same</div>
+                    <div>/release-notes for more</div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Main Content -->
+        <div class="text-[15px] leading-relaxed">
+            
+            <!-- Command Input -->
+            <div class="mb-4 text-gray-400">
+                &gt; <span class="bg-gray-700 text-gray-200 px-1">/seo</span>
+            </div>
+
+            <!-- Title -->
+            <div class="mb-4">
+                <span class="font-bold underline decoration-1 underline-offset-4 tracking-wide">&bull; SEO Analysis Tool</span>
+            </div>
+
+            <div class="mb-2">
+                Here's what I can do:
+            </div>
+
+            <!-- Commands Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/seo audit &lt;url&gt;</td>
+                        <td>Full site audit (6 parallel subagents, health score)</td>
+                    </tr>
+                    <tr>
+                        <td>/seo page &lt;url&gt;</td>
+                        <td>Deep single-page analysis</td>
+                    </tr>
+                    <tr>
+                        <td>/seo technical &lt;url&gt;</td>
+                        <td>Technical SEO (crawlability, indexability, CWV, security)</td>
+                    </tr>
+                    <tr>
+                        <td>/seo content &lt;url&gt;</td>
+                        <td>E-E-A-T and content quality analysis</td>
+                    </tr>
+                    <tr>
+                        <td>/seo schema &lt;url&gt;</td>
+                        <td>Schema.org markup detection, validation, generation</td>
+                    </tr>
+                    <tr>
+                        <td>/seo sitemap &lt;url&gt;</td>
+                        <td>Sitemap analysis or generation</td>
+                    </tr>
+                    <tr>
+                        <td>/seo images &lt;url&gt;</td>
+                        <td>Image optimization audit</td>
+                    </tr>
+                    <tr>
+                        <td>/seo geo &lt;url&gt;</td>
+                        <td>AI Overviews / Generative Engine Optimization</td>
+                    </tr>
+                    <tr>
+                        <td>/seo plan &lt;type&gt;</td>
+                        <td>Strategic SEO planning (SaaS, local ecommerce, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td>/seo programmatic</td>
+                        <td>Programmatic SEO analysis</td>
+                    </tr>
+                    <tr>
+                        <td>/seo competitor-pages</td>
+                        <td>Generate comparison/alternatives pages</td>
+                    </tr>
+                    <tr>
+                        <td>/seo hreflang &lt;url&gt;</td>
+                        <td>International SEO / hreflang audit</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Bottom Prompt & Input -->
+            <div class="mb-4">
+                What would you like to analyze? Give me a URL and a command (or just a URL for a full audit).
+            </div>
+
+            <div class="flex items-center">
+                <span class="text-gray-400 mr-2">&gt;</span>
+                <span>https://altogeneration.com/</span>
+                <span class="cursor ml-1"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
